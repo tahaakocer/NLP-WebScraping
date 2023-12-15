@@ -12,9 +12,11 @@ public class DriverFactory {
 		System.setProperty("webdriver.chrome.driver", "C:\\Selenium\\chromedriver.exe");
 		ChromeOptions options = new ChromeOptions();
 		ChromeDriverService service = new ChromeDriverService.Builder().withLogOutput(System.out).build();
+		options.setExperimentalOption("debuggerAddress", "localhost:" + 9222); // açık pencere portu
 		options.addArguments("--remote-allow-origins=*");
-	//	options.addArguments("--headless");
+		options.addArguments("--priority=high");
 		return new ChromeDriver(service, options);
+		
 	}
 	
 	public static void setimplicitlyWait(WebDriver driver) {
