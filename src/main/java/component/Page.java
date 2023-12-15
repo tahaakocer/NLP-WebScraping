@@ -10,15 +10,18 @@ import org.openqa.selenium.support.PageFactory;
 public class Page {
 	
 	private WebDriver driver;
-	private String pElementsXpaths = "//*[@id='-post-rtjson-content']/p";
+	public String pElementsXpaths = "//*[@id='-post-rtjson-content']/p";
+	public String buttonElementString = "//div[@class='inline-block mt-[2px] ml-px']";
+	
 
 	public Page(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver,this);
 	}
 	
-	@FindBy(xpath = "//faceplate-partial/div[1]/button/span/span[2]")
-	WebElement buttonElement;	
-	
+	@FindBy(xpath = "//div[@class='inline-block mt-[2px] ml-px']")
+	public WebElement buttonElement;	
+	 // //faceplate-tracker[@source='post']//shreddit-comment-tree
+	// //div[@class='w-fit inline-block mt-[2px] ml-px']
 }
 
